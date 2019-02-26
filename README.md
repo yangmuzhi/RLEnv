@@ -20,6 +20,6 @@ git clone https://github.com/yangmuzhi/RLEnv.git
 ```
 from snake_env import Snakes_subsonic
 
-env = Snakes_subsonic()
+env = Snakes_subsonic()
 
 ```
