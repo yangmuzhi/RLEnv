@@ -18,7 +18,8 @@ class  Snakes_subsonic(object):
         self.len = 3
         self.action = [0,1,2]
         self.count = 0
-        self.MAXSTEP = 1000
+        self.MAXSTEP = 100
+        self.try_times = []
         # 最多玩1000次
         # 0 什么也不做 1 相对于dir 左转 2相对于dir 右转
 
@@ -56,6 +57,8 @@ class  Snakes_subsonic(object):
     def step(self, action):
         done, reward = self._move(action)
         self.count += 1
+        if done :
+            self.try_times.append(self.count)
 
         return self.ground.flatten(), reward, done, {}
 
@@ -83,7 +86,8 @@ class  Snakes_subsonic(object):
                                   self.loc + [1, 0]])
         else:
             raise NotImplementedError(" NO this dir, dir must be 0, 1, 2, 3!")
-
+        
+        self.loc_choice = loc_choice
         if action == 0:
             next_loc = loc_choice[0]
         elif action == 1:
@@ -110,15 +114,14 @@ class  Snakes_subsonic(object):
         # 检查next_loc 是什么
         #print(loc_choice)
         #print(next_loc)
-
+        self.next_loc = next_loc
         content = self.ground[next_loc[0], next_loc[1]]
-        print("next_loc:{}".format(next_loc))
-        print("\n content:{}".format(content))
+
         done = False
 
         # 判断游戏是否达到最大step，以及是否完所有东西结束
         if (self.count >= self.MAXSTEP) or (not (self.ground == 2).sum()):
-            done, reward = True, -10
+            done, reward = True, 0
         # 撞到墙或者吃到自己
         elif abs(content) == 1:
             done, reward = True, -10
@@ -144,6 +147,7 @@ class  Snakes_subsonic(object):
     def reset(self):
         self._ground_init(self.height, self.width)
         self._snake_init(self.born_loc, self.len)
+        self.count = 0
         return self.ground.flatten()
 
     def render(self):
@@ -202,3 +206,5 @@ class Render_ground():
         self._draw_ground(body, ground)
         self.window.update()
         self.can.destroy()
+
+
