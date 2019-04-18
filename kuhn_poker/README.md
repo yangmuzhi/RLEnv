@@ -29,9 +29,31 @@ api.send(1)
 
 - 效果  kuhn poker是一个不完全信息博弈，因此每次send之后，会返回一个dict包含该player应该知道的信息。
 
+
+  - 初始化
+
+```
+(defaultdict(<function kuhn_poker.kuhn_poker_env.Kuhn_Poker.reset.<locals>.<lambda>()>,
+             {}),
+ False,
+ None)
+```
+
+  - player0 决策
+
 ```
 (defaultdict(<function kuhn_poker.kuhn_poker_env.Kuhn_Poker.reset.<locals>.<lambda>()>,
              {0: {'player': 0, 'action': 0, 'value': 0, 'done': False}}),
+ False,
+ None)
+```
+
+  - player1 决策
+
+```
+(defaultdict(<function kuhn_poker.kuhn_poker_env.Kuhn_Poker.reset.<locals>.<lambda>()>,
+             {0: {'player': 0, 'action': 0, 'value': 0, 'done': False},
+              1: {'player': 1, 'action': 1, 'value': 0, 'done': False}}),
  False,
  None)
 ```
