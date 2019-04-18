@@ -6,7 +6,9 @@ Reinforcement Learning Env for fun;
 
 - [snake 贪吃蛇](./snake)
 
-- [kuhn poker 一个简单的两人牌类博弈，可以用来实践Counterfactual Regret Minimization算法](./kuhn_poker)
+- [kuhn poker ](./kuhn_poker)一个简单的两人牌类博弈，可以用来实践Counterfactual Regret Minimization算法
+
+- [beer game 啤酒游戏](./Beer_game)
 
 
 
@@ -35,7 +37,7 @@ env = Snakes_subsonic()
 
 ![Snakes Subsonic](./pic/snake_demo.png)
 
-- Kuhn poker 
+- Kuhn poker
 
 ```
 (defaultdict(<function kuhn_poker.kuhn_poker_env.Kuhn_Poker.reset.<locals>.<lambda>()>,
