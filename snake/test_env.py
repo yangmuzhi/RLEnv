@@ -3,7 +3,7 @@
 """
 
 """
-from snake_env import Snakes_subsonic
+from snake.snake_env import Snakes_subsonic
 import numpy as np
 import time
 env = Snakes_subsonic()

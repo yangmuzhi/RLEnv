@@ -17,3 +17,13 @@ env.step(action)
 ```
 
 - 构建： 使用numpy和tKinter(构建图形)
+
+
+
+- 效果
+
+  - ![Snakes Subsonic](../pic/snake_demo.png)
+
+  - ![Snakes Subsonic](../pic/snake_demo1.png)
+
+  - ![Snakes Subsonic](../pic/snake_demo2.png)
