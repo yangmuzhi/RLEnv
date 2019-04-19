@@ -27,7 +27,7 @@ class BeerGameEnv:
 
     def _deal_after_each_week(self):
         """每周结算, 返回 state，r, d"""
-        self.cost_his.append(self.cost)
+        self.cost_his.append(self.cost.copy())
         return self.cost
 
     def _check_stock_and_trans(self, a):
@@ -48,7 +48,7 @@ class BeerGameEnv:
                 self.stock[i] = 0
                 assert (self.stock[i] - self.order[i]) < 0
                 self.cost[i] = 2 * (self.stock[i] - self.order[i])
-            self.trans.append(trans)
+        self.trans.append(trans)
 
     def reset(self):
         self._init_chain()
@@ -64,4 +64,6 @@ class BeerGameEnv:
 
         self._check_stock_and_trans(action[0])
         self.week += 1
-        return self._deal_after_each_week()
+        cost = self._deal_after_each_week()
+
+        return cost

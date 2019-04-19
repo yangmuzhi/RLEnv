@@ -14,3 +14,14 @@ action = np.array([0,0,0,0])
 env.stock
 env.trans
 env.step(action)
+env.cost
+env.cost_his
+
+env.reset()
+for i in range(50):
+    action = np.random.uniform(0,10,4)
+    env.step(action)
+
+
+
+env.cost_his
