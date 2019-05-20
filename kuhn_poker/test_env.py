@@ -6,4 +6,9 @@ next(api)
 
 env.card_in_hand
 api.send(0)
-api.send(1)
+
+
+
+h = api.send(1)
+env.h_dict.values()
+list(env.h_dict.values())[-1]
