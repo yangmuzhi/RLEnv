@@ -8,7 +8,8 @@ Reinforcement Learning Env for fun;
 
 - [kuhn poker ](./kuhn_poker)一个简单的两人牌类博弈，可以用来实践Counterfactual Regret Minimization算法
 
-- [beer game 啤酒游戏](./Beer_game)
+- [beer game 啤酒游戏](./Beer_game)）一个模拟供应链的简易游戏。
+
 
 
 
